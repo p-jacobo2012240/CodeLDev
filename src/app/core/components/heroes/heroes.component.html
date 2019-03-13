@@ -1,3 +1,7 @@
-<p>
-  heroes works!
-</p>
+<h1>Estos son los heroes: </h1>
+
+<div class="card" style="width: 18rem;">
+  <ul *ngFor="let hero of heroes" class="list-group list-group-flush">
+    <li class="list-group-item">{{ hero.name  }} </li>
+  </ul>
+</div>

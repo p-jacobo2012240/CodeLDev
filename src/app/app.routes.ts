@@ -5,13 +5,19 @@ import { HeroeComponent } from './core/components/heroe/heroe.component';
 
 const ROUTES : Routes = [
     {
-        path: 'heores', 
-        component: HeroesComponent,
-        pathMatch: 'full'
+        path: 'heroes', 
+        component: HeroesComponent
     },
     {
-        path : 'heroe/:id', component : HeroeComponent
+        path : 'heroe/:id', 
+        component : HeroeComponent
+    },
+    {
+        path: '',
+        redirectTo: '/heroes',
+        pathMatch: 'full' 
     }
+
 ]
 
 export const APP_ROUTING = RouterModule.forRoot(ROUTES, { useHash: true })
