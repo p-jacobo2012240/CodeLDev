@@ -1,7 +1,35 @@
 <h1>Estos son los heroes: </h1>
 
-<div class="card" style="width: 18rem;">
-  <ul *ngFor="let hero of heroes" class="list-group list-group-flush">
-    <li class="list-group-item">{{ hero.name  }} </li>
-  </ul>
+<button type="button" class="btn btn-primary"
+  data-toggle="modal" data-target=".bd-example-modal-lg">Add Hero</button>
+
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">name</th>
+      <th scope="col">power</th>
+      <th scope="col">popularity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes" >
+      <th scope="row">{{ hero.id  }} </th>
+      <td>{{ hero.name  }}</td>
+      <td>{{ hero.power }} </td>
+      <td>{{ hero.popularity }} </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- MODAL ---->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
 </div>
