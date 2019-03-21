@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router } from '@angular/router'
 import { Heroe } from '../heroe';
+import { HeroeService } from '../../services/heroe.service';
 
 @Component({
   selector: 'app-heroe',
@@ -10,12 +12,14 @@ export class HeroeComponent implements OnInit {
 
   private heroe : Heroe = new Heroe();
 
-  constructor() { }
+  constructor(private heroeService : HeroeService,
+    private router: Router ) { }
 
   ngOnInit() {
   }
 
   createHero(): void{
-    console.log(`esto es lo que se mando ${this.heroe}`)
+    this.heroeService.addHero(this.heroe)
+      .subscribe( res => this.router.navigate(['/heroes']))
   }
 }

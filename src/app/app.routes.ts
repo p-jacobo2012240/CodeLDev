@@ -9,7 +9,7 @@ const ROUTES : Routes = [
         component: HeroesComponent
     },
     {
-        path : 'heroe/:id', 
+        path : 'heroe', 
         component : HeroeComponent
     },
     {
