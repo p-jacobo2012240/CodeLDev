@@ -19,7 +19,7 @@ export class HeroeService {
 
   addHero(hero: Heroe ): Observable<Heroe>{
     let data = JSON.stringify(hero)
-    return this.http.post<Heroe>(`${API_URL}heroes`, hero, {headers: this.httpHeaders})
+    return this.http.post<Heroe>(`${API_URL}heroes`, data, {headers: this.httpHeaders})
   }
 
 

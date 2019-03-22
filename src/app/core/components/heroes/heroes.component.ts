@@ -10,7 +10,7 @@ import { Heroe } from '../heroe';
 export class HeroesComponent implements OnInit {
   
   private heroe : Heroe = new Heroe();
-  heroes : Heroe[] = []
+  public heroes : Heroe[] = []
  
 
   constructor(private heroeService: HeroeService ) {}
