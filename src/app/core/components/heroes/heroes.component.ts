@@ -8,19 +8,27 @@ import { Heroe } from '../heroe';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-
+  
+  private heroe : Heroe = new Heroe();
   heroes : Heroe[] = []
+ 
 
   constructor(private heroeService: HeroeService ) {}
 
   ngOnInit() {
+    this.showHeroes()
+  }
+
+  showHeroes(): void{
     this.heroeService.getHeroes()
       .subscribe( (data: any)=>{
-
         this.heroes = data
-        console.log(data)
-
       })
+  }
+
+  createHero(): void{
+    this.heroeService.addHero(this.heroe)
+      .subscribe( ()=> this.showHeroes())
   }
 
 }
