@@ -22,5 +22,9 @@ export class HeroeService {
     return this.http.post<Heroe>(`${API_URL}heroes`, data, {headers: this.httpHeaders})
   }
 
+  getHero(id): Observable<Heroe>{
+    return this.http.get<Heroe>(`${API_URL}heroes/${id}`)
+  }
+
 
 }

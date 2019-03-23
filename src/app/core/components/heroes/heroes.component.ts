@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
 import { HeroeService } from '../../services/heroe.service'
 import { Heroe } from '../heroe';
 
@@ -13,7 +14,8 @@ export class HeroesComponent implements OnInit {
   public heroes : Heroe[] = []
  
 
-  constructor(private heroeService: HeroeService ) {}
+  constructor(private heroeService: HeroeService, 
+    private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.showHeroes()
@@ -25,6 +27,11 @@ export class HeroesComponent implements OnInit {
         this.heroes = data
       })
   }
+
+  showOneHero(): void {
+    //this.activatedRoute.params.subscribe()  falta agregar algo
+  }
+
 
   createHero(): void{
     this.heroeService.addHero(this.heroe)
