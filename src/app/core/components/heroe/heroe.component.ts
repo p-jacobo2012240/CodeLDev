@@ -34,6 +34,7 @@ export class HeroeComponent implements OnInit {
   }
 
   updateHero(): void {
+    console.log(this.heroe)
     this.heroServie.updateHero(this.heroe)
       .subscribe( heroe =>{
         console.log(this.heroe)
