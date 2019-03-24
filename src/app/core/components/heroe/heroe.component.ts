@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { HeroeService } from '../../services/heroe.service'
 import { Heroe } from '../heroe';
 
@@ -14,7 +14,8 @@ export class HeroeComponent implements OnInit {
   public heroes : Heroe[] = []
 
   constructor(private activatedRoute: ActivatedRoute,
-    private heroServie : HeroeService ) { }
+    private heroServie : HeroeService,
+    private router: Router ) { }
 
   ngOnInit() {
     this.changeHero();
@@ -24,12 +25,20 @@ export class HeroeComponent implements OnInit {
     this.activatedRoute.params.subscribe(params =>{
       let id = params['id']
       if(id){
-        this.heroServie.getHero(id).subscribe( 
-          (heroe) =>{
+        this.heroServie.getHero(id)
+          .subscribe( (heroe) =>{
             this.heroe = heroe 
           })
       }
     })
+  }
+
+  updateHero(): void {
+    this.heroServie.updateHero(this.heroe)
+      .subscribe( heroe =>{
+        console.log(this.heroe)
+        this.router.navigate(['/heroes'])
+      })
   }
 
 }

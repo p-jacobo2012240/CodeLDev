@@ -26,5 +26,10 @@ export class HeroeService {
     return this.http.get<Heroe>(`${API_URL}heroes/${id}`)
   }
 
+  updateHero(hero: Heroe ): Observable<Heroe>{
+    let data = JSON.stringify(hero)
+    return this.http.put<Heroe>(`${API_URL}/${hero.id}`, data, { headers: this.httpHeaders })
+  }
+
 
 }

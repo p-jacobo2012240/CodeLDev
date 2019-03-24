@@ -1,4 +1,4 @@
-<form (ngSubmit)="createHero()" >
+<form (ngSubmit)="updateHero()" >
     <div class="form-group">
       <label for="exampleInputEmail1">Name</label>
       <input type="text" class="form-control" [(ngModel)]="heroe.name" name="name"  >
@@ -11,5 +11,5 @@
       <label for="exampleInputPassword1">Popularity</label>
       <input type="number" class="form-control"  [(ngModel)]="heroe.popularity" name="popularity"  >
     </div>
-    <button class="btn btn-primary"type="submit" >Submit</button>
+    <button class="btn btn-primary"type="submit" >Update</button>
 </form>  
