@@ -11,6 +11,12 @@
       <th scope="col">name</th>
       <th scope="col">power</th>
       <th scope="col">popularity</th>
+      <th>
+        Update
+      </th>
+      <th>
+        Delete
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -19,6 +25,13 @@
       <td>{{ hero.name  }}</td>
       <td>{{ hero.power }} </td>
       <td>{{ hero.popularity }} </td>
+      <td>
+        <button type="button" name="edit" 
+          [routerLink]="['/heroe/', hero.id]" 
+            class="btn btn-primary btn-sm">
+            edit
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
