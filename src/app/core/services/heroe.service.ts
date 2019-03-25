@@ -22,13 +22,17 @@ export class HeroeService {
     return this.http.post<Heroe>(`${API_URL}heroes`, data, {headers: this.httpHeaders})
   }
 
-  getHero(id): Observable<Heroe>{
+  getHero(id : Number ): Observable<Heroe>{
     return this.http.get<Heroe>(`${API_URL}heroes/${id}`)
   }
 
   updateHero(hero: Heroe ): Observable<Heroe>{
     let data = JSON.stringify(hero)
     return this.http.put<Heroe>(`${API_URL}heroes/${hero.id}`, data, { headers: this.httpHeaders })
+  }
+
+  deleteHero(id : Number ) : Observable<Heroe>{
+    return this.http.delete<Heroe>(`${API_URL}heroes/${id}`, {headers : this.httpHeaders } )
   }
 
 

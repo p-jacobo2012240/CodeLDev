@@ -28,14 +28,17 @@ export class HeroesComponent implements OnInit {
       })
   }
 
-  showOneHero(): void {
-    //this.activatedRoute.params.subscribe()  falta agregar algo
-  }
-
-
   createHero(): void{
     this.heroeService.addHero(this.heroe)
       .subscribe( ()=> this.showHeroes())
   }
+
+  deleteHero(heroe: Heroe): void {
+    this.heroeService.deleteHero(heroe.id)
+      .subscribe( ()=> this.showHeroes())
+  }
+
+
+
 
 }
