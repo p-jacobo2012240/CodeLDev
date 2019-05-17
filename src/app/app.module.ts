@@ -10,13 +10,16 @@ import { HeroeComponent } from './core/components/heroe/heroe.component';
 import { HeroeService } from './core/services/heroe.service';
 
 //Routing
-import { APP_ROUTING } from './app.routes'
+import { APP_ROUTING } from './app.routes';
+import { SearchComponent } from './core/components/search/search.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeroesComponent,
-    HeroeComponent
+    HeroeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
